@@ -31,8 +31,6 @@ module alarm_clock (
     logic [6:0] encoded_minute_ones;
 
     always_ff @(posedge CLOCK_50) begin
-        
-
         // Clock mode
         if (!SW[9]) begin
             if (clk_count == 49_999_999) begin
@@ -92,35 +90,5 @@ module alarm_clock (
         .encoded    (encoded_minute_ones)
     );
 
-
-    // sseg_encoder hour_tens_encoder(
-    //     .digit      (4'd1),
-    //     .encoded    (encoded_hour_tens)
-    // );
-    // sseg_encoder hour_ones_encoder(
-    //     .digit      (4'd2),
-    //     .encoded    (encoded_hour_ones)
-    // );
-    // sseg_encoder minute_tens_encoder(
-    //     .digit      (4'd3),
-    //     .encoded    (encoded_minute_tens)
-    // );
-    // sseg_encoder minute_ones_encoder(
-    //     .digit      (4'd4),
-    //     .encoded    (encoded_minute_ones)
-    // );
-    
-    // assign HEX3 = (hour >= 10) ? encoded_hour_tens : 7'b1111111;
-    // assign HEX3 = encoded_hour_tens;
-    // assign HEX2 = encoded_hour_ones;
-    // assign HEX1 = encoded_minute_tens;
-    // assign HEX0 = encoded_minute_ones;
-    
-    // assign HEX3 = 7'b0000000;
-    // assign HEX2 = 7'b0000000;
-    // assign HEX1 = 7'b1111111;
-    // assign HEX0 = 7'b0000000;
     assign LEDR = 10'b0;
-
-    
 endmodule
