@@ -1,0 +1,7 @@
+/rtl/db
+/rtl/incremental_db
+/rtl/output_files
+/rtl/simulation
+
+*.bak
+*.txt
